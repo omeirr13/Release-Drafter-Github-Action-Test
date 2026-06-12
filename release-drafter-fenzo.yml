@@ -1,0 +1,62 @@
+# Fenzo release draft. Separate rolling draft from the educative one (.github/release-drafter.yml).
+# filter-by-commitish + commitish: stable_fenzo make release-drafter maintain an INDEPENDENT draft
+# keyed to the stable_fenzo branch, so the two drafts never overwrite each other.
+# Timeline-scoped: the changelog is everything that flowed into stable_fenzo since the last fenzo
+# release (it is NOT filtered to fenzo-only PRs — all PRs merge to master in this monorepo).
+commitish: refs/heads/stable_fenzo
+filter-by-commitish: true
+
+# Placeholder draft name/tag; release_manager overrides these to Release-f{YYMMDDHH} on publish.
+name-template: 'Fenzo Release Draft'
+tag-template: 'fenzo-next'
+
+categories:
+  - title: '🏗 Infrastructure'
+    labels:
+      - 'infrastructure'
+      - 'performance'
+      - 'perf'
+  - title: '💰 Growth'
+    labels:
+      - 'growth'
+      - 'core'
+  - title: 'Personalized Adaptive Learing'
+    labels:
+      - 'AI'
+      - 'Adaptive Learning'
+  - title: '🔍 SEO'
+    label: 'seo'
+  - title: '⚙️ Execution Engine'
+    label: 'execution-engine'
+  - title: '🐛 Bug Fixes'
+    label: 'bug'
+  - title: '🕵🏻‍♂️ Sentry'
+    label: 'sentry'
+  - title: '🧪 Tests'
+    label: 'tests'
+  - title: '🧰 Maintenance'
+    label: 'maintenance'
+  - title: '🖱 UX'
+    label: 'UX'
+  - title: '🧹 Code Cleanup'
+    label: 'code-cleanup'
+  - title: '⚠️ Livesite'
+    labels:
+      - 'livesite'
+      - 'on-call'
+  - title: '🎢 Migrations'
+    labels:
+      - 'run-migration'
+      - 'blocking-migration'
+      - 'run-script'
+  - title: 'Deploy Collaborative Editor'
+    label: 'deploy-collaborative-editor'
+
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+template: |
+  # Change Log
+
+  $CHANGES
+
+  ## Contributors
+  $CONTRIBUTORS
